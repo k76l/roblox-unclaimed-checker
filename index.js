@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 // senin Discord webhook'un
-const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1431984025626738758/N0GkLN9rfJQbEI0X1OYDnsKz5D43GgpPuvaHtsVQ41K7HxAsZjH_RzXp-2CsqrlCuYvl";
+const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK;
 
 function extractGroupId(text) {
   const match = text.match(/\d+/);
@@ -34,3 +34,4 @@ app.post("/check", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Bot çalışıyor: http://localhost:3000"));
+
